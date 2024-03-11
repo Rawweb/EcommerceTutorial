@@ -99,8 +99,8 @@ var newSwiper = new Swiper(".new-swiper", {
 
 const scrollUp = document.getElementById("scroll-up");
 
-window.addEventListener("scroll", function() {
-  if(scrollY >=350) {
+window.addEventListener("scroll", function () {
+  if (scrollY >= 350) {
     scrollUp.classList.add("show-scroll");
   } else scrollUp.classList.remove("show-scroll");
 });
@@ -108,5 +108,32 @@ window.addEventListener("scroll", function() {
 /*=============== LIGHT BOX ===============*/
 
 /*=============== QUESTIONS ACCORDION ===============*/
+const accordionItem = document.querySelectorAll(".questions__item");
+
+accordionItem.forEach((item) => {
+  const accordionHeader = item.querySelector(".questions__header");
+
+  accordionHeader.addEventListener("click", () => {
+    const openItem = document.querySelector(".questions__item.accordion-open");
+
+    toggleItem(item);
+
+    if (openItem && openItem !== item) {
+      toggleItem(openItem);
+    }
+  });
+});
+
+const toggleItem = (item) => {
+  const accordionContent = item.querySelector(".questions__content");
+
+  if (item.classList.contains("accordion-open")) {
+    accordionContent.removeAttribute("style");
+    item.classList.remove("accordion-open");
+  } else {
+    accordionContent.style.height = accordionContent.scrollHeight + "px";
+    item.classList.add("accordion-open");
+  }
+};
 
 /*=============== STYLE SWITCHER ===============*/
