@@ -1239,6 +1239,14 @@ input {
     .shop__title {
         font-size: var(--normal-font-size);
     }
+
+    .blog__post {
+        column-gap: 1.6rem;
+    }
+
+    .blog__title {
+        font-size: var(--normal-font-size);
+    }
 }
 
 /* For medium devices */
@@ -1335,6 +1343,10 @@ input {
         justify-content: center;
     }
 
+    .blog__post {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .footer__container {
         grid-template-columns: 1fr 1fr;
         /* grid-template-columns: 1fr; */
@@ -1386,6 +1398,12 @@ input {
     .pagination {
         column-gap: .4rem;
     }
+
+    .blog__post {
+        grid-template-columns: 1fr;
+        row-gap: .8rem;
+    }
+
 }
 
 /* For small devices */
@@ -1423,6 +1441,19 @@ input {
 
     .pagination span {
         font-size: var(--small-font-size);
+    }
+
+    .blog__post {
+        padding: .8rem;
+    }
+
+    .blog__date,
+    .blog__details {
+        font-size: var(--smaller-font-size);
+    }
+
+    .blog__title {
+        font-size: var(--small-font-size); 
     }
 
     .footer__container {
