@@ -137,3 +137,14 @@ const toggleItem = (item) => {
 };
 
 /*=============== STYLE SWITCHER ===============*/
+const styleSwitcherToggle = document.querySelector(".style__switcher-toggler");
+styleSwitcherToggle.addEventListener("click", () => {
+  document.querySelector(".style__switcher").classList.toggle("open");
+});
+
+//HIDE STYLE SWITCHER ON SCROLL
+window.addEventListener("scroll", () => {
+  if (document.querySelector(".style__switcher").classList.contains("open")) {
+    document.querySelector(".style__switcher").classList.toggle("open");
+  }
+});
